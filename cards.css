@@ -1,0 +1,381 @@
+/* ========================================
+   PROJECT DETAIL PAGES STYLES
+   ======================================== */
+
+/* Project detail layout */
+.project-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.project-detail__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.project-detail__header h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.project-detail__subtitle {
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Project detail image */
+.project-detail__image {
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.detail-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--base-radius);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-image:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(74, 144, 226, 0.3);
+}
+
+/* Gallery layout for multiple images */
+.project-detail__gallery {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-bottom: 80px;
+  align-items: start;
+}
+
+.detail-image.secondary {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+/* Project content */
+.project-detail__content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.detail-section {
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.detail-section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 60px;
+}
+
+.detail-section h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--gradient-blue), var(--gradient-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.detail-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.detail-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* Detail lists */
+.detail-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.detail-list li {
+  position: relative;
+  padding: 12px 0 12px 30px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.detail-list li:last-child {
+  border-bottom: none;
+}
+
+.detail-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  color: var(--gradient-blue);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.detail-list li strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Tech stack tags */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.tech-tag {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(74, 144, 226, 0.1);
+  border: 1px solid rgba(74, 144, 226, 0.3);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--gradient-blue);
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background: rgba(74, 144, 226, 0.2);
+  border-color: var(--gradient-blue);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+/* Project actions */
+.project-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Button styles for project pages */
+.btn-primary {
+  display: inline-block;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, var(--gradient-blue), var(--gradient-purple));
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: var(--base-radius);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 25px rgba(74, 144, 226, 0.4),
+    0 4px 12px rgba(144, 19, 254, 0.3);
+  color: #fff;
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 14px 28px;
+  background: transparent;
+  border: 2px solid var(--border-color);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: var(--base-radius);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  border-color: var(--gradient-blue);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.2);
+}
+
+/* Links in project titles (for portfolio cards) */
+.project-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.project-title a:hover {
+  color: inherit;
+}
+
+/* Make sure project card hover still works with links */
+.project-card:hover .project-title a {
+  background: linear-gradient(135deg, var(--gradient-blue), var(--gradient-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* RESPONSIVE DESIGN FOR PROJECT PAGES*/
+
+@media (max-width: 900px) {
+  .project-detail {
+    padding: 0 15px;
+  }
+
+  .project-detail__header {
+    margin-bottom: 40px;
+  }
+
+  .project-detail__header h1 {
+    font-size: 2.5rem;
+  }
+
+  .project-detail__subtitle {
+    font-size: 1.1rem;
+  }
+
+  .project-detail__image,
+  .project-detail__gallery {
+    margin-bottom: 50px;
+  }
+
+  .project-detail__gallery {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .detail-section {
+    margin-bottom: 35px;
+    padding-bottom: 20px;
+  }
+
+  .detail-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .detail-section p {
+    font-size: 1rem;
+  }
+
+  .project-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  .tech-stack {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-detail__header h1 {
+    font-size: 2rem;
+  }
+
+  .project-detail__subtitle {
+    font-size: 1rem;
+  }
+
+  .detail-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .detail-list li {
+    padding-left: 25px;
+    font-size: 1rem;
+  }
+
+  .tech-tag {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+}
+
+.project-image-wrapper {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  height: 220px;
+  border-radius: var(--base-radius);
+  overflow: hidden;
+  z-index: 2;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .4);
+}
+
+/* Make all images fill the container consistently */
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(100%) contrast(1.1);
+  transition: filter .25s, transform .25s;
+}
+
+/* Special handling for documents/certificates */
+.project-image[alt*="Certificate"],
+.project-image[alt*="Excellence"],
+.project-image[alt*="Award"] {
+  object-fit: contain;
+  object-position: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+}
+
+/* Medal images - center and crop nicely */
+.project-image[alt*="Medal"],
+.project-image[alt*="Badminton"] {
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Website screenshots - crop to show important parts */
+.project-image[alt*="Screenshot"],
+.project-image[alt*="website"],
+.project-image[alt*="Website"] {
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Esports/gaming images */
+.project-image[alt*="Esports"],
+.project-image[alt*="Marvel"],
+.project-image[alt*="achievement"] {
+  object-fit: cover;
+  object-position: center;
+}
